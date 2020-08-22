@@ -5,8 +5,13 @@ import java.util.UUID;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.hateoas.CollectionModel;
 import org.springframework.hateoas.EntityModel;
+import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.skull.bff.client.eureka.ProjectClient;
@@ -43,6 +48,8 @@ public class ProjectControllerImpl implements ProjectController {
 	}
 
 	@Override
+	@PostMapping
+	@ResponseStatus(HttpStatus.CREATED)
 	public EntityModel<ProjectDto> newItem(final ProjectDto projectDto) {
 
 		log.info("Creating new item");
@@ -52,6 +59,7 @@ public class ProjectControllerImpl implements ProjectController {
 	}
 
 	@Override
+	@GetMapping("/{id}")
 	public EntityModel<ProjectDto> getById(final UUID projectId) {
 
 		log.info("Getting project by id");
@@ -61,6 +69,7 @@ public class ProjectControllerImpl implements ProjectController {
 	}
 
 	@Override
+	@PutMapping("/{id}")
 	public EntityModel<ProjectDto> updateItem(final ProjectDto projectDto, final UUID projectId) {
 
 		log.info("Updating project");
@@ -70,6 +79,7 @@ public class ProjectControllerImpl implements ProjectController {
 	}
 
 	@Override
+	@DeleteMapping("/{id}")
 	public void deleteItem(final UUID projectId) {
 
 		log.info("Deleting project");
