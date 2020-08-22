@@ -23,7 +23,7 @@ import com.skull.bff.dto.ProjectDto;
  *
  */
 @FeignClient("mpm-ms-project")
-@RequestMapping(value = "${service.project.request.mapping}")
+@RequestMapping(value = "${eureka.client.service.project.request.mapping}")
 public interface ProjectClient {
 
 	/**

@@ -23,7 +23,7 @@ import lombok.extern.slf4j.Slf4j;
  *
  */
 @RestController
-@RequestMapping("${service.request.mapping}")
+@RequestMapping("${service.request.mapping}/${service.project.request.mapping}")
 @Slf4j
 public class ProjectControllerImpl implements ProjectController {
 
