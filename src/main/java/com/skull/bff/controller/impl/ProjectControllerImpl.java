@@ -43,27 +43,38 @@ public class ProjectControllerImpl implements ProjectController {
 	}
 
 	@Override
-	public EntityModel<ProjectDto> newItem(ProjectDto projectDto) {
-		// TODO Auto-generated method stub
-		return null;
+	public EntityModel<ProjectDto> newItem(final ProjectDto projectDto) {
+
+		log.info("Creating new item");
+		log.debug(String.format("Project name: %s", projectDto.getName()));
+
+		return client.newItem(projectDto);
 	}
 
 	@Override
-	public EntityModel<ProjectDto> getById(UUID projectId) {
-		// TODO Auto-generated method stub
-		return null;
+	public EntityModel<ProjectDto> getById(final UUID projectId) {
+
+		log.info("Getting project by id");
+		log.debug(String.format("Project id: %s", String.valueOf(projectId)));
+
+		return client.getById(projectId);
 	}
 
 	@Override
-	public EntityModel<ProjectDto> updateItem(ProjectDto projectDto, UUID projectId) {
-		// TODO Auto-generated method stub
-		return null;
+	public EntityModel<ProjectDto> updateItem(final ProjectDto projectDto, final UUID projectId) {
+
+		log.info("Updating project");
+		log.debug(String.format("Project id: %s", String.valueOf(projectId)));
+
+		return client.updateItem(projectDto, projectId);
 	}
 
 	@Override
-	public void deleteItem(UUID projectId) {
-		// TODO Auto-generated method stub
+	public void deleteItem(final UUID projectId) {
 
+		log.info("Deleting project");
+
+		client.deleteItem(projectId);
 	}
 
 }
