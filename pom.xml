@@ -10,10 +10,10 @@
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.skull</groupId>
-	<artifactId>mpm-bff</artifactId>
+	<artifactId>mpm-api-bff</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>mpm-bff</name>
-	<description>mpm bff (backend for frontend)</description>
+	<description>mpm api - bff (backend for frontend)</description>
 
 	<properties>
 		<java.version>1.8</java.version>
