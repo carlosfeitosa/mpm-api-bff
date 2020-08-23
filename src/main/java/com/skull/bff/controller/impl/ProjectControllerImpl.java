@@ -30,13 +30,13 @@ import lombok.extern.slf4j.Slf4j;
 @RestController
 @RequestMapping("${service.request.mapping}/${service.project.request.mapping}")
 @Slf4j
-public class ProjectControllerImpl implements ProjectController {
+public class ProjectControllerImpl implements ProjectController { // NOPMD by skull on 8/22/20, 9:10 PM
 
 	/**
 	 * Client for project micro service.
 	 */
 	@Autowired
-	private ProjectClient client;
+	private ProjectClient client; // NOPMD by skull on 8/22/20, 9:10 PM
 
 	@Override
 	@GetMapping

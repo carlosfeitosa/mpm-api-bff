@@ -41,7 +41,7 @@ public interface ProjectController {
 	 * 
 	 * @return project by id
 	 */
-	EntityModel<ProjectDto> getById(@PathVariable(value = "id") UUID projectId);
+	EntityModel<ProjectDto> getById(@PathVariable(value = "id") UUID projectId); // NOPMD by skull on 8/22/20, 9:08 PM
 
 	/**
 	 * Update a project.
@@ -51,12 +51,18 @@ public interface ProjectController {
 	 * 
 	 * @return updated project
 	 */
-	EntityModel<ProjectDto> updateItem(@RequestBody ProjectDto projectDto, @PathVariable(value = "id") UUID projectId);
+	EntityModel<ProjectDto> updateItem(@RequestBody ProjectDto projectDto, @PathVariable(value = "id") UUID projectId); // NOPMD
+																														// by
+																														// skull
+																														// on
+																														// 8/22/20,
+																														// 9:08
+																														// PM
 
 	/**
 	 * Delete a project.
 	 * 
 	 * @param projectId project id
 	 */
-	void deleteItem(@PathVariable(value = "id") UUID projectId);
+	void deleteItem(@PathVariable(value = "id") UUID projectId); // NOPMD by skull on 8/22/20, 9:08 PM
 }

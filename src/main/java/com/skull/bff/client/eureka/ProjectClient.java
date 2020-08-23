@@ -23,7 +23,7 @@ import com.skull.bff.dto.ProjectDto;
  *
  */
 @FeignClient("mpm-ms-project")
-@RequestMapping(value = "${eureka.client.service.project.request.mapping}")
+@RequestMapping(value = "${eureka.client.service.project.request.mapping}") // NOPMD by skull on 8/22/20, 9:07 PM
 public interface ProjectClient {
 
 	/**
@@ -52,7 +52,7 @@ public interface ProjectClient {
 	 * @return project by id
 	 */
 	@GetMapping("/{id}")
-	EntityModel<ProjectDto> getById(@PathVariable(value = "id") UUID projectId);
+	EntityModel<ProjectDto> getById(@PathVariable(value = "id") UUID projectId); // NOPMD by skull on 8/22/20, 9:07 PM
 
 	/**
 	 * Update a project.
@@ -63,7 +63,13 @@ public interface ProjectClient {
 	 * @return updated project
 	 */
 	@PutMapping("/{id}")
-	EntityModel<ProjectDto> updateItem(@RequestBody ProjectDto projectDto, @PathVariable(value = "id") UUID projectId);
+	EntityModel<ProjectDto> updateItem(@RequestBody ProjectDto projectDto, @PathVariable(value = "id") UUID projectId); // NOPMD
+																														// by
+																														// skull
+																														// on
+																														// 8/22/20,
+																														// 9:07
+																														// PM
 
 	/**
 	 * Delete a project.
@@ -71,5 +77,5 @@ public interface ProjectClient {
 	 * @param projectId project id
 	 */
 	@DeleteMapping("/{id}")
-	void deleteItem(@PathVariable(value = "id") UUID projectId);
+	void deleteItem(@PathVariable(value = "id") UUID projectId); // NOPMD by skull on 8/22/20, 9:07 PM
 }

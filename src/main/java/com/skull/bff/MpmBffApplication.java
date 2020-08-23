@@ -15,14 +15,14 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
 @SpringBootApplication
 @EnableDiscoveryClient
 @EnableFeignClients
-public class MpmBffApplication {
+public class MpmBffApplication { // NOPMD by skull on 8/22/20, 9:06 PM
 
 	/**
 	 * Default constructor.
 	 * 
 	 * @param args args from command line
 	 */
-	public static void main(String[] args) {
+	public static void main(final String[] args) {
 
 		SpringApplication.run(MpmBffApplication.class, args);
 	}
