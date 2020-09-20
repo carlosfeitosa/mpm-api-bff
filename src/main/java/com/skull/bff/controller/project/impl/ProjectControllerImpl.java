@@ -14,9 +14,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.skull.bff.client.eureka.project.ProjectClient;
 import com.skull.bff.controller.project.ProjectController;
 import com.skull.bff.dto.project.ProjectDto;
+import com.skull.bff.service.project.ProjectService;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -33,18 +33,18 @@ import lombok.extern.slf4j.Slf4j;
 public class ProjectControllerImpl implements ProjectController { // NOPMD by skull on 8/22/20, 9:10 PM
 
 	/**
-	 * Client for project micro service.
+	 * Service for project.
 	 */
 	@Autowired
-	private ProjectClient client; // NOPMD by skull on 8/22/20, 9:10 PM
+	private ProjectService service;
 
 	@Override
 	@GetMapping
 	public CollectionModel<ProjectDto> getAll() {
 
-		log.info("Getting all projects");
+		log.info("API: Getting all projects");
 
-		return client.getAll();
+		return service.getAll();
 	}
 
 	@Override
@@ -52,39 +52,36 @@ public class ProjectControllerImpl implements ProjectController { // NOPMD by sk
 	@ResponseStatus(HttpStatus.CREATED)
 	public EntityModel<ProjectDto> newItem(final ProjectDto projectDto) {
 
-		log.info("Creating new item");
-		log.debug(String.format("Project name: %s", projectDto.getName()));
+		log.info("API: Creating new item");
 
-		return client.newItem(projectDto);
+		return service.newItem(projectDto);
 	}
 
 	@Override
 	@GetMapping("/{id}")
 	public EntityModel<ProjectDto> getById(final UUID projectId) {
 
-		log.info("Getting project by id");
-		log.debug(String.format("Project id: %s", String.valueOf(projectId)));
+		log.info("API: Getting project by id");
 
-		return client.getById(projectId);
+		return service.getById(projectId);
 	}
 
 	@Override
 	@PutMapping("/{id}")
 	public EntityModel<ProjectDto> updateItem(final ProjectDto projectDto, final UUID projectId) {
 
-		log.info("Updating project");
-		log.debug(String.format("Project id: %s", String.valueOf(projectId)));
+		log.info("API: Updating project");
 
-		return client.updateItem(projectDto, projectId);
+		return service.updateItem(projectDto, projectId);
 	}
 
 	@Override
 	@DeleteMapping("/{id}")
 	public void deleteItem(final UUID projectId) {
 
-		log.info("Deleting project");
+		log.info("API: Deleting project");
 
-		client.deleteItem(projectId);
+		service.deleteItem(projectId);
 	}
 
 }
