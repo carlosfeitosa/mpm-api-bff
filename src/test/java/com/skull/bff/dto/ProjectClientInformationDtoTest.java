@@ -7,6 +7,8 @@ import java.util.UUID;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
+import com.skull.bff.dto.project.ProjectClientInformationDto;
+
 class ProjectClientInformationDtoTest {
 
 	private static final String TEST_CLIENT_PROJECT_CODE = "AAA-00001234";

@@ -3,7 +3,7 @@ package com.skull.bff.dto.response;
 import java.util.List;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.skull.bff.dto.ProjectDto;
+import com.skull.bff.dto.project.ProjectDto;
 
 /**
  * Class for embedded project dto list (response).

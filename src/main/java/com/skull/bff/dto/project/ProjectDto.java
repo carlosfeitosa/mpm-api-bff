@@ -1,12 +1,13 @@
-package com.skull.bff.dto;
+package com.skull.bff.dto.project;
 
 import java.util.UUID;
 
 import org.springframework.hateoas.RepresentationModel;
+import org.springframework.hateoas.server.core.Relation;
 
-import com.skull.bff.enums.ProjectHealthEnum;
-import com.skull.bff.enums.ProjectStatusEnum;
-import com.skull.bff.enums.ProjectTypeEnum;
+import com.skull.bff.enums.project.ProjectHealthEnum;
+import com.skull.bff.enums.project.ProjectStatusEnum;
+import com.skull.bff.enums.project.ProjectTypeEnum;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -20,6 +21,7 @@ import lombok.EqualsAndHashCode;
  */
 @Data
 @EqualsAndHashCode(callSuper = false)
+@Relation(collectionRelation = "projects", itemRelation = "project")
 public class ProjectDto extends RepresentationModel<ProjectDto> {
 
 	/**

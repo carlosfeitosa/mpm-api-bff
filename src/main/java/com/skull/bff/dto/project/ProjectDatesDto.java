@@ -1,4 +1,4 @@
-package com.skull.bff.dto;
+package com.skull.bff.dto.project;
 
 import java.util.Date;
 

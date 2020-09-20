@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import com.skull.bff.client.eureka.ProjectClient;
+import com.skull.bff.client.eureka.project.ProjectClient;
 
 @SpringBootTest
 class MpmBffApplicationTests {

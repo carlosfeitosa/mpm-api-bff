@@ -28,9 +28,9 @@ import org.springframework.web.client.RestClientException;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.skull.bff.dto.ProjectClientInformationDto;
-import com.skull.bff.dto.ProjectDatesDto;
-import com.skull.bff.dto.ProjectDto;
+import com.skull.bff.dto.project.ProjectClientInformationDto;
+import com.skull.bff.dto.project.ProjectDatesDto;
+import com.skull.bff.dto.project.ProjectDto;
 import com.skull.bff.dto.response.ResponseProjectList;
 
 @SpringBootTest(webEnvironment = WebEnvironment.RANDOM_PORT)

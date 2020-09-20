@@ -1,4 +1,4 @@
-package com.skull.bff.controller.impl;
+package com.skull.bff.controller.project.impl;
 
 import java.util.UUID;
 
@@ -14,9 +14,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.skull.bff.client.eureka.ProjectClient;
-import com.skull.bff.controller.ProjectController;
-import com.skull.bff.dto.ProjectDto;
+import com.skull.bff.client.eureka.project.ProjectClient;
+import com.skull.bff.controller.project.ProjectController;
+import com.skull.bff.dto.project.ProjectDto;
 
 import lombok.extern.slf4j.Slf4j;
 

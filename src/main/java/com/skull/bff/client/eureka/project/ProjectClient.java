@@ -1,28 +1,37 @@
-package com.skull.bff.controller;
+package com.skull.bff.client.eureka.project;
 
 import java.util.UUID;
 
+import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.hateoas.CollectionModel;
 import org.springframework.hateoas.EntityModel;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.skull.bff.dto.ProjectDto;
+import com.skull.bff.dto.project.ProjectDto;
 
 /**
- * Interface for project controller.
+ * Project eureka client.
  * 
- * @author Carlos Feitosa (carlos.feitosa.nt@gmail.com)
- * @since 2020-08-19
+ * @author Carlos Feitosa (carlos.feitosa.nt#gmail.com)
+ * @since 2020-08-17
  *
  */
-public interface ProjectController {
+@FeignClient("mpm-ms-project")
+@RequestMapping(value = "${eureka.client.service.project.request.mapping}") // NOPMD by skull on 8/22/20, 9:07 PM
+public interface ProjectClient {
 
 	/**
 	 * Default route (list all projects).
 	 * 
 	 * @return list of all projects
 	 */
+	@GetMapping
 	CollectionModel<ProjectDto> getAll();
 
 	/**
@@ -32,6 +41,7 @@ public interface ProjectController {
 	 * 
 	 * @return saved project
 	 */
+	@PostMapping
 	EntityModel<ProjectDto> newItem(@RequestBody ProjectDto projectDto);
 
 	/**
@@ -41,7 +51,8 @@ public interface ProjectController {
 	 * 
 	 * @return project by id
 	 */
-	EntityModel<ProjectDto> getById(@PathVariable(value = "id") UUID projectId); // NOPMD by skull on 8/22/20, 9:08 PM
+	@GetMapping("/{id}")
+	EntityModel<ProjectDto> getById(@PathVariable(value = "id") UUID projectId); // NOPMD by skull on 8/22/20, 9:07 PM
 
 	/**
 	 * Update a project.
@@ -51,12 +62,13 @@ public interface ProjectController {
 	 * 
 	 * @return updated project
 	 */
+	@PutMapping("/{id}")
 	EntityModel<ProjectDto> updateItem(@RequestBody ProjectDto projectDto, @PathVariable(value = "id") UUID projectId); // NOPMD
 																														// by
 																														// skull
 																														// on
 																														// 8/22/20,
-																														// 9:08
+																														// 9:07
 																														// PM
 
 	/**
@@ -64,5 +76,6 @@ public interface ProjectController {
 	 * 
 	 * @param projectId project id
 	 */
-	void deleteItem(@PathVariable(value = "id") UUID projectId); // NOPMD by skull on 8/22/20, 9:08 PM
+	@DeleteMapping("/{id}")
+	void deleteItem(@PathVariable(value = "id") UUID projectId); // NOPMD by skull on 8/22/20, 9:07 PM
 }

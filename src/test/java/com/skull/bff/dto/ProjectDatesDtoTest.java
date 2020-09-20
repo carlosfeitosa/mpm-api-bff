@@ -7,6 +7,8 @@ import java.util.Date;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
+import com.skull.bff.dto.project.ProjectDatesDto;
+
 class ProjectDatesDtoTest {
 
 	@Test

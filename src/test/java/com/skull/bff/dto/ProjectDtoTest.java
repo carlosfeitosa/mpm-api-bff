@@ -8,9 +8,12 @@ import java.util.UUID;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-import com.skull.bff.enums.ProjectHealthEnum;
-import com.skull.bff.enums.ProjectStatusEnum;
-import com.skull.bff.enums.ProjectTypeEnum;
+import com.skull.bff.dto.project.ProjectClientInformationDto;
+import com.skull.bff.dto.project.ProjectDatesDto;
+import com.skull.bff.dto.project.ProjectDto;
+import com.skull.bff.enums.project.ProjectHealthEnum;
+import com.skull.bff.enums.project.ProjectStatusEnum;
+import com.skull.bff.enums.project.ProjectTypeEnum;
 
 class ProjectDtoTest {
 

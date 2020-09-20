@@ -13,9 +13,10 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.hateoas.CollectionModel;
 import org.springframework.hateoas.EntityModel;
 
-import com.skull.bff.dto.ProjectClientInformationDto;
-import com.skull.bff.dto.ProjectDatesDto;
-import com.skull.bff.dto.ProjectDto;
+import com.skull.bff.client.eureka.project.ProjectClient;
+import com.skull.bff.dto.project.ProjectClientInformationDto;
+import com.skull.bff.dto.project.ProjectDatesDto;
+import com.skull.bff.dto.project.ProjectDto;
 
 import feign.FeignException.NotFound;
 

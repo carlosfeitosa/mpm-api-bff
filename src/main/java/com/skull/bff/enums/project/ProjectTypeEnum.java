@@ -1,4 +1,4 @@
-package com.skull.bff.enums;
+package com.skull.bff.enums.project;
 
 /**
  * Enum for project type.
