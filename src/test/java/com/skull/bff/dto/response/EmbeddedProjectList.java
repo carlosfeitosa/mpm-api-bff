@@ -17,17 +17,17 @@ public class EmbeddedProjectList { // NOPMD by skull on 8/8/20, 7:00 PM
 	/**
 	 * Project list.
 	 */
-	@JsonProperty("projectDtoes")
-	private List<ProjectDto> projectDtoes;
+	@JsonProperty("projects")
+	private List<ProjectDto> projects;
 
-	public List<ProjectDto> getProjectDtoes() {
+	public List<ProjectDto> getProjects() {
 
-		return projectDtoes;
+		return projects;
 	}
 
-	public void setProjectDtoes(final List<ProjectDto> projectDtoes) {
+	public void setProjects(final List<ProjectDto> projects) {
 
-		this.projectDtoes = projectDtoes;
+		this.projects = projects;
 	}
 
 }

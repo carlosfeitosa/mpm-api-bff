@@ -64,7 +64,7 @@ class ProjectControllerImplWebTest {
 
 	@Test
 	@DisplayName("Test if can get 200 response for default endpoint")
-	void greetingShouldReturnDefaultMessage() throws Exception {
+	void testIfCanGet200ForDefaultEndpoint() throws Exception {
 
 		ResponseEntity<String> response = restTemplate.getForEntity(endpoint, String.class);
 
@@ -83,7 +83,7 @@ class ProjectControllerImplWebTest {
 				new ParameterizedTypeReference<ResponseProjectList>() {
 				}).getBody();
 
-		assertThat(recoveredProjects.getEmbedded().getProjectDtoes()).isNotEmpty();
+		assertThat(recoveredProjects.getEmbedded().getProjects()).isNotEmpty();
 	}
 
 	@Test
@@ -98,9 +98,9 @@ class ProjectControllerImplWebTest {
 				new ParameterizedTypeReference<ResponseProjectList>() {
 				}).getBody();
 
-		assertThat(recoveredProjects.getEmbedded().getProjectDtoes()).isNotEmpty();
+		assertThat(recoveredProjects.getEmbedded().getProjects()).isNotEmpty();
 
-		ProjectDto expected = recoveredProjects.getEmbedded().getProjectDtoes().get(0);
+		ProjectDto expected = recoveredProjects.getEmbedded().getProjects().get(0);
 
 		response = restTemplate.getForEntity(String.format("%s/%s", endpoint, expected.getId().toString()),
 				String.class);
@@ -115,6 +115,7 @@ class ProjectControllerImplWebTest {
 	@Test
 	@DisplayName("Test if service throws not found (404) trying to get item by invalid id")
 	void testIfGetThrowsNotFound404TryingGetProjectByInvalidId() {
+
 		ResponseEntity<String> response = restTemplate.getForEntity(String.format("%s/%s", endpoint, UUID.randomUUID()),
 				String.class);
 
@@ -271,7 +272,7 @@ class ProjectControllerImplWebTest {
 	@Test
 	@DisplayName("Test if service can throws not found (404) trying to delete an invalid project")
 	void testIfThrowNotFound404TryingToDeleteAnInvalidProject() {
-		
+
 		ResponseEntity<String> response = this.restTemplate.exchange(
 				String.format("%s/%s", endpoint, UUID.randomUUID()), HttpMethod.DELETE,
 				new HttpEntity<>(new ProjectDto()), String.class);
