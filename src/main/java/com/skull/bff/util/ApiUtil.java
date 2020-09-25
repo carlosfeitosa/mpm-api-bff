@@ -13,19 +13,24 @@ import lombok.extern.slf4j.Slf4j;
  *
  */
 @Slf4j
-public class ApiUtil {
+public final class ApiUtil {
+
+	/**
+	 * Private constructor.
+	 */
+	private ApiUtil() {
+
+	}
 
 	/**
 	 * Remove links from entity list.
 	 * 
 	 * @param <T>             dto entity class
 	 * @param entityList      dto list
-	 * @param cascadeEntities boolean if true remove links from entities within
-	 *                        collection
-	 * 
+	 * @param cascadeEntities if true remove links from entities within collection
 	 * @return dto list without links
 	 */
-	public static <T> CollectionModel<T> removeLinks(CollectionModel<T> entityList) {
+	public static <T> CollectionModel<T> removeLinks(final CollectionModel<T> entityList) {
 
 		log.info("Removing links from collection model");
 		entityList.removeLinks();
@@ -41,7 +46,7 @@ public class ApiUtil {
 	 * 
 	 * @return dto entity without links
 	 */
-	public static <T> EntityModel<T> removeLinks(EntityModel<T> entity) {
+	public static <T> EntityModel<T> removeLinks(final EntityModel<T> entity) {
 
 		log.info("Removing link from entity model");
 		entity.removeLinks();

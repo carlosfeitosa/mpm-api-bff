@@ -36,7 +36,7 @@ public class ProjectControllerImpl implements ProjectController { // NOPMD by sk
 	 * Service for project.
 	 */
 	@Autowired
-	private ProjectService service;
+	private transient ProjectService service;
 
 	@Override
 	@GetMapping

@@ -23,7 +23,7 @@ import lombok.extern.slf4j.Slf4j;
  */
 @Slf4j
 @Service
-public class ProjectServiceImpl implements ProjectService {
+public class ProjectServiceImpl implements ProjectService { // NOPMD by skull on 9/25/20, 12:46 AM
 
 	/**
 	 * Client for project micro service.
@@ -46,7 +46,7 @@ public class ProjectServiceImpl implements ProjectService {
 	}
 
 	@Override
-	public EntityModel<ProjectDto> newItem(ProjectDto projectDto) {
+	public EntityModel<ProjectDto> newItem(final ProjectDto projectDto) {
 
 		log.info("Creating new item");
 		log.debug(String.format("Project name: %s", projectDto.getName()));
@@ -60,7 +60,7 @@ public class ProjectServiceImpl implements ProjectService {
 	}
 
 	@Override
-	public EntityModel<ProjectDto> getById(UUID projectId) {
+	public EntityModel<ProjectDto> getById(final UUID projectId) {
 
 		log.info("Getting project by id");
 		log.debug(String.format("Project id: %s", String.valueOf(projectId)));
@@ -74,7 +74,7 @@ public class ProjectServiceImpl implements ProjectService {
 	}
 
 	@Override
-	public EntityModel<ProjectDto> updateItem(ProjectDto projectDto, UUID projectId) {
+	public EntityModel<ProjectDto> updateItem(final ProjectDto projectDto, final UUID projectId) {
 
 		log.info("Updating project");
 		log.debug(String.format("Project id: %s", String.valueOf(projectId)));
@@ -88,7 +88,7 @@ public class ProjectServiceImpl implements ProjectService {
 	}
 
 	@Override
-	public void deleteItem(UUID projectId) {
+	public void deleteItem(final UUID projectId) {
 
 		log.info("Deleting project");
 
